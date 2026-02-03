@@ -45,4 +45,17 @@ export const getUsers = async () => {
     return response.data;
 }
 
+/**
+ * Cria um novo usuário
+ * @param {string} name - Nome do usuário
+ * @param {string} email - Email do usuário
+ */
+export const createUser = async (name, email) => {
+    const response = await api.post('/api/v1/users', {
+        name,
+        email,
+    });
+    return response.data;
+}
+
 export default api;
